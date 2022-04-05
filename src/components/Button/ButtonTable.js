@@ -42,14 +42,14 @@ const addList = () =>{
    )
 :(null)}
       <tbody>
-  {addListToTable?.map((info,index)=>{
+  {addListToTable?.map((info,index)=>(
     <tr key={index}>
-      <td>{info.Name}</td>
+      <td>{info.Name})</td>
       <td>{info.Email}</td>
       <td>{info.Phone}</td>
       <td>{info.Age}</td>
     </tr>
-             })}
+  ))}
       </tbody>
      </table>
   </div>
