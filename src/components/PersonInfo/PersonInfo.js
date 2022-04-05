@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styling from "./PersonInfo.module.scss";
 import SvgContainer from "../SvgContainer/SvgContainer";
+import ButtonTable from "../Button/ButtonTable";
 
 const PersonInfo = () => {
   const [fetchPerson, setFetchPerson] = useState(); // {} ve [] true
@@ -30,6 +31,8 @@ const PersonInfo = () => {
       <div className={styling.text2}>{text2 || (fetchPerson ? setText2(`${fetchPerson?.name?.title} ${fetchPerson?.name?.first} ${fetchPerson?.name?.last}`) : null)}</div>
       <SvgContainer fetchPerson={fetchPerson} setText1={setText1} setText2={setText2}/>
       
+     <ButtonTable apiFetcher={ApiFetcher} fetchPerson={fetchPerson}/>
+
     </div>
   );
 };
