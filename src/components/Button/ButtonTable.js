@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styling from "./ButtonTable.module.scss"
+import {useId} from "react"
 
 const ButtonTable = ({apiFetcher, fetchPerson}) => {
  
@@ -31,7 +32,7 @@ const addList = () =>{
     <table className={styling.table}>
  {show ?(
    <thead>
-       <tr className={styling.title}>
+       <tr  key={id} className={styling.title}>
        <th>FirstName</th>
        <th>Email</th>
        <th>Phone</th>
@@ -48,7 +49,7 @@ const addList = () =>{
       <td>{info.Phone}</td>
       <td>{info.Age}</td>
     </tr>
-             })
+             })}
       </tbody>
      </table>
   </div>
